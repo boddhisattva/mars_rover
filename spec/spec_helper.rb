@@ -16,6 +16,12 @@
 
 require 'pry'
 
+PROJECT_ROOT = File.expand_path('../..', __FILE__)
+
+Dir.glob(File.join(PROJECT_ROOT, 'lib', '*.rb')).each do |file|
+  require file
+end
+
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
