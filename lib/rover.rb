@@ -6,9 +6,8 @@ require_relative 'east'
 require_relative 'west'
 
 class Rover
-  def initialize(current_position, terrain)
+  def initialize(current_position)
     @current_position = current_position
-    @terrain = terrain
   end
 
   attr_reader :current_position
