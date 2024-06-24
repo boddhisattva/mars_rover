@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-describe RoverPosition do
+describe Position do
   let(:terrain) { RectangularPlateau.new(0, 0, 5, 5) }
 
   describe '#move_vertically_upward' do
     context 'movement attempted within terrain boundary limits' do
       it 'allows one to go further up the Y axis(imagine a 2D Grid system) by one unit' do
-        current_position = RoverPosition.new(1, 3, 'N', terrain)
+        current_position = Position.new(1, 3, 'N', terrain)
 
         current_position.move_vertically_upward
 
@@ -17,7 +17,7 @@ describe RoverPosition do
 
     context 'movement attempted outside terrain boundary limits' do
       it 'returns an outside boundary limits error with related message' do
-        current_position = RoverPosition.new(1, 5, 'N', terrain)
+        current_position = Position.new(1, 5, 'N', terrain)
 
         expect do
           current_position.move_vertically_upward
@@ -29,7 +29,7 @@ describe RoverPosition do
   describe '#move_vertically_downward' do
     context 'movement attempted within terrain boundary limits' do
       it 'allows one to go further down the Y axis(imagine a 2D Grid system) by one unit' do
-        current_position = RoverPosition.new(1, 3, 'S', terrain)
+        current_position = Position.new(1, 3, 'S', terrain)
 
         current_position.move_vertically_downward
 
@@ -40,7 +40,7 @@ describe RoverPosition do
 
     context 'movement attempted outside terrain boundary limits' do
       it 'returns an outside boundary limits error with related message' do
-        current_position = RoverPosition.new(1, 0, 'S', terrain)
+        current_position = Position.new(1, 0, 'S', terrain)
 
         expect do
           current_position.move_vertically_downward
@@ -52,7 +52,7 @@ describe RoverPosition do
   describe '#move_horizontally_forward' do
     context 'movement attempted within terrain boundary limits' do
       it 'allows one to go a step further horizontally on the  X axis(imagine a 2D Grid system) by one unit' do
-        current_position = RoverPosition.new(1, 3, 'E', terrain)
+        current_position = Position.new(1, 3, 'E', terrain)
 
         current_position.move_horizontally_forward
 
@@ -63,7 +63,7 @@ describe RoverPosition do
 
     context 'movement attempted outside terrain boundary limits' do
       it 'returns an outside boundary limits error with related message' do
-        current_position = RoverPosition.new(5, 3, 'E', terrain)
+        current_position = Position.new(5, 3, 'E', terrain)
 
         expect do
           current_position.move_horizontally_forward
@@ -75,7 +75,7 @@ describe RoverPosition do
   describe '#move_horizontally_backward' do
     context 'movement attempted within terrain boundary limits' do
       it 'allows one to go a step backward horizontally on the X axis(imagine a 2D Grid system) by one unit' do
-        current_position = RoverPosition.new(1, 3, 'W', terrain)
+        current_position = Position.new(1, 3, 'W', terrain)
 
         current_position.move_horizontally_backward
 
@@ -86,7 +86,7 @@ describe RoverPosition do
 
     context 'movement attempted outside terrain boundary limits' do
       it 'returns an outside boundary limits error with related message' do
-        current_position = RoverPosition.new(0, 5, 'W', terrain)
+        current_position = Position.new(0, 5, 'W', terrain)
 
         expect do
           current_position.move_horizontally_backward
@@ -97,7 +97,7 @@ describe RoverPosition do
 
   describe '#get_orientation' do
     it 'returns the current compass based position of a given entity' do
-      current_position = RoverPosition.new(1, 3, 'W', terrain)
+      current_position = Position.new(1, 3, 'W', terrain)
 
       expect(current_position.get_orientation).to eq('W')
     end
@@ -105,7 +105,7 @@ describe RoverPosition do
 
   describe '#set_orientation' do
     it 'sets a compass based position for a given entity' do
-      current_position = RoverPosition.new(1, 3, 'W', terrain)
+      current_position = Position.new(1, 3, 'W', terrain)
 
       current_position.set_orientation('N')
 
@@ -115,7 +115,7 @@ describe RoverPosition do
 
   describe '#location' do
     it 'returns the current location of a given entity' do
-      current_position = RoverPosition.new(1, 3, 'W', terrain)
+      current_position = Position.new(1, 3, 'W', terrain)
 
       expect(current_position.location).to eq('1 3 W')
     end

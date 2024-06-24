@@ -2,7 +2,7 @@
 
 class OutsideBoundaryLimitsError < StandardError; end
 
-class RoverPosition
+class Position
   def initialize(x_coordinate, y_coordinate, orientation, terrain)
     @x_coordinate = x_coordinate
     @y_coordinate = y_coordinate

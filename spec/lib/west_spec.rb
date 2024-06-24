@@ -24,7 +24,7 @@ describe West do
   describe '#move' do
     context 'given an entity points in the West direction' do
       it 'moves a step backward horizontally along that path(i.e., along the x-axis)' do
-        current_position = RoverPosition.new(1, 3, 'W', RectangularPlateau.new(0, 0, 5, 5))
+        current_position = Position.new(1, 3, 'W', RectangularPlateau.new(0, 0, 5, 5))
 
         west.move(current_position)
 
