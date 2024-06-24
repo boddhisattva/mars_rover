@@ -15,7 +15,7 @@ rover1 = Rover.new(Position.new(1, 2, 'N', terrain))
 rover2 = Rover.new(Position.new(3, 3, 'E', terrain))
 
 rover1.traverse(path1)
-puts rover1.current_position.location
+puts rover1.current_location
 
 rover2.traverse(path2)
-puts rover2.current_position.location
+puts rover2.current_location

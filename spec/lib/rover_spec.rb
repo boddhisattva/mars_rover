@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 describe Rover do
-  describe '#traverse' do
-    let(:terrain) { RectangularPlateau.new(0, 0, 5, 5) }
+  let(:terrain) { RectangularPlateau.new(0, 0, 5, 5) }
 
+  describe '#traverse' do
     context 'when given a rover that wants to travel through a valid path in a given terrain' do
       it 'explores the terrain based on the specified navigation path' do
         path1 = Path.new('LMLMLMLMM')
@@ -15,8 +15,8 @@ describe Rover do
         rover2 = Rover.new(Position.new(1, 2, 'E', terrain))
         rover2.traverse(path2)
 
-        expect(rover1.current_position.location).to eq('1 3 N')
-        expect(rover2.current_position.location).to eq('3 0 N')
+        expect(rover1.current_location).to eq('1 3 N')
+        expect(rover2.current_location).to eq('3 0 N')
       end
     end
 
@@ -37,6 +37,16 @@ describe Rover do
         expect do
           rover1.traverse(path1)
         end.to raise_error(OutsideBoundaryLimitsError, 'Movement not permissible outside terrain boundary limits')
+      end
+    end
+  end
+
+  describe '#current_location' do
+    context 'when given a rover that is present at a specified position' do
+      it 'returns the current location of that rover' do
+        rover1 = Rover.new(Position.new(1, 2, 'N', terrain))
+
+        expect(rover1.current_location).to eq('1 2 N')
       end
     end
   end

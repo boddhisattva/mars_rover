@@ -12,8 +12,6 @@ class Rover
     @current_position = current_position
   end
 
-  attr_reader :current_position
-
   COMPASS_DIRECTION = {
     'N' => 'North',
     'S' => 'South',
@@ -38,7 +36,13 @@ class Rover
     end
   end
 
+  def current_location
+    current_position.location
+  end
+
   private
+
+  attr_reader :current_position
 
   def original_direction
     Object.const_get(COMPASS_DIRECTION[current_position.get_orientation]).new
