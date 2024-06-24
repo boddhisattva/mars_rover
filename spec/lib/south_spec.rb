@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 describe South do
-  let(:south) { South.new }
+  let(:south) { described_class.new }
 
   describe '#short_form' do
     it 'returns an abbreviated equivalent of the South compass direction' do
@@ -22,7 +22,7 @@ describe South do
   end
 
   describe '#move' do
-    context 'given an entity points in the South direction' do
+    context 'when an entity points in the South direction' do
       it 'moves a step downward vertically along that path(i.e., along the y-axis)' do
         current_position = Position.new(1, 3, 'S', RectangularPlateau.new(0, 0, 5, 5))
 

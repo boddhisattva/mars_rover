@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 describe East do
-  let(:east) { East.new }
+  let(:east) { described_class.new }
 
   describe '#short_form' do
     it 'returns an abbreviated equivalent of the East compass direction' do
@@ -22,7 +22,7 @@ describe East do
   end
 
   describe '#move' do
-    context 'given an entity points in the East direction' do
+    context 'when an entity points in the East direction' do
       it 'moves a step forward horizontally along that path(i.e., along the x-axis)' do
         current_position = Position.new(1, 3, 'E', RectangularPlateau.new(0, 0, 5, 5))
 
