@@ -3,6 +3,15 @@
 describe Rover do
   let(:terrain) { RectangularPlateau.new(0, 0, 5, 5) }
 
+  it 'has a COMPASS_DIRECTION constant' do
+    expect(Rover::COMPASS_DIRECTION).to eq({
+                                             'N' => 'North',
+                                             'S' => 'South',
+                                             'W' => 'West',
+                                             'E' => 'East'
+                                           })
+  end
+
   describe '#traverse' do
     context 'when given a rover that wants to travel through a valid path in a given terrain' do
       it 'explores the terrain based on the specified navigation path' do
