@@ -6,3 +6,16 @@ Metrics/MethodLength:
   Max: 25 # Default: 10
 Naming/AccessorMethodName:
   Enabled: false
+
+require:
+  - rubocop-performance
+  - rubocop-rspec
+
+RSpec/NestedGroups:
+  Max: 4 # Default: 3
+
+RSpec/MultipleExpectations:
+  Max: 4 # Default: 1
+
+RSpec/ExampleLength:
+  Enabled: false

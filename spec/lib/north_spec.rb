@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 describe North do
-  let(:north) { North.new }
+  let(:north) { described_class.new }
 
   describe '#short_form' do
     it 'returns an abbreviated equivalent of the North direction' do
@@ -22,7 +22,7 @@ describe North do
   end
 
   describe '#move' do
-    context 'given an entity points in the North direction' do
+    context 'when an entity points in the North direction' do
       it 'moves a step upward vertically along that path(i.e., along the y-axis)' do
         current_position = Position.new(1, 3, 'N', RectangularPlateau.new(0, 0, 5, 5))
 

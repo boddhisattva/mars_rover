@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 describe RectangularPlateau do
-  let(:terrain) { RectangularPlateau.new(0, 0, 5, 5) }
+  let(:terrain) { described_class.new(0, 0, 5, 5) }
 
   describe '#upward_vertical_movement_permissible?' do
     context 'when an entity wants to move vertically upward along the Y-axis' do
-      context 'movement is within terrain boundary limits' do
+      context 'when movement is within terrain boundary limits' do
         it 'returns true' do
           current_position = Position.new(1, 3, 'N', terrain)
 
@@ -13,7 +13,7 @@ describe RectangularPlateau do
         end
       end
 
-      context 'movement is outside terrain boundary limits' do
+      context 'when movement is outside terrain boundary limits' do
         it 'returns false' do
           current_position = Position.new(1, 5, 'N', terrain)
 
@@ -25,7 +25,7 @@ describe RectangularPlateau do
 
   describe '#downward_vertical_movement_permissible?' do
     context 'when an entity wants to move vertically downward along the Y-axis' do
-      context 'movement is within terrain boundary limits' do
+      context 'when movement is within terrain boundary limits' do
         it 'returns true' do
           current_position = Position.new(1, 3, 'S', terrain)
 
@@ -33,7 +33,7 @@ describe RectangularPlateau do
         end
       end
 
-      context 'movement is outside terrain boundary limits' do
+      context 'when movement is outside terrain boundary limits' do
         it 'returns false' do
           current_position = Position.new(1, 0, 'S', terrain)
 
@@ -45,7 +45,7 @@ describe RectangularPlateau do
 
   describe '#forward_horizontal_movement_permissible?' do
     context 'when an entity wants to move horizontally forward along the X-axis' do
-      context 'movement is within terrain boundary limits' do
+      context 'when movement is within terrain boundary limits' do
         it 'returns true' do
           current_position = Position.new(1, 3, 'E', terrain)
 
@@ -53,7 +53,7 @@ describe RectangularPlateau do
         end
       end
 
-      context 'movement is outside terrain boundary limits' do
+      context 'when movement is outside terrain boundary limits' do
         it 'returns false' do
           current_position = Position.new(5, 3, 'E', terrain)
 
@@ -65,7 +65,7 @@ describe RectangularPlateau do
 
   describe '#backward_horizontal_movement_permissible?' do
     context 'when an entity wants to move horizontally backward along the X-axis' do
-      context 'movement is within terrain boundary limits' do
+      context 'when movement is within terrain boundary limits' do
         it 'returns true' do
           current_position = Position.new(1, 3, 'W', terrain)
 
@@ -73,7 +73,7 @@ describe RectangularPlateau do
         end
       end
 
-      context 'movement is outside terrain boundary limits' do
+      context 'when movement is outside terrain boundary limits' do
         it 'returns false' do
           current_position = Position.new(0, 5, 'W', terrain)
 
