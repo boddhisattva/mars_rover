@@ -24,7 +24,7 @@ describe North do
   describe '#move' do
     context 'given an entity points in the North direction' do
       it 'moves a step upward vertically along that path(i.e., along the y-axis)' do
-        current_position = RoverPosition.new(1, 3, 'N')
+        current_position = RoverPosition.new(1, 3, 'N', RectangularPlateau.new(0, 0, 5, 5))
 
         north.move(current_position)
 
