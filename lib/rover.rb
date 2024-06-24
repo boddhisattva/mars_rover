@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+class InvalidStepError < StandardError; end
+
 require_relative 'north'
 require_relative 'south'
 require_relative 'east'
@@ -31,7 +33,7 @@ class Rover
       when Path::MOVE
         current_direction.move(current_position)
       else
-        raise 'Invalid step in path'
+        raise InvalidStepError, 'Invalid step in path'
       end
     end
   end

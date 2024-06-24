@@ -21,11 +21,11 @@ describe Rover do
     end
 
     context 'when given a rover that wants to travel through an invalid path in a given terrain' do
-      it 'returns an appropriate error message related to an invalid step' do
+      it 'returns an Invalid Step Error error with an appropriate error message related to an invalid step' do
         path1 = Path.new('LMLMLSMLMM')
 
         rover1 = Rover.new(Position.new(1, 2, 'N', terrain))
-        expect { rover1.traverse(path1) }.to raise_error('Invalid step in path')
+        expect { rover1.traverse(path1) }.to raise_error(InvalidStepError, 'Invalid step in path')
       end
     end
 
