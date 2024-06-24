@@ -24,7 +24,7 @@ describe South do
   describe '#move' do
     context 'given an entity points in the South direction' do
       it 'moves a step downward vertically along that path(i.e., along the y-axis)' do
-        current_position = RoverPosition.new(1, 3, 'S', RectangularPlateau.new(0, 0, 5, 5))
+        current_position = Position.new(1, 3, 'S', RectangularPlateau.new(0, 0, 5, 5))
 
         south.move(current_position)
 

@@ -24,7 +24,7 @@ describe East do
   describe '#move' do
     context 'given an entity points in the East direction' do
       it 'moves a step forward horizontally along that path(i.e., along the x-axis)' do
-        current_position = RoverPosition.new(1, 3, 'E', RectangularPlateau.new(0, 0, 5, 5))
+        current_position = Position.new(1, 3, 'E', RectangularPlateau.new(0, 0, 5, 5))
 
         east.move(current_position)
 
