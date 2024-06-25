@@ -2,7 +2,7 @@
 
 ## About
 
-Based on the given [problem statement](https://github.com/boddhisattva/mars_rover/blob/main/problem_statement.md), this is a program that calculates a rovers final position after traversing along a given path within a certain terrain(in this case its a Rectangular plateau). You see how the sample output looks like from the [program output](https://github.com/boddhisattva/mars_rover/blob/master/README.md#program-output) section
+Based on the given [problem statement](https://github.com/boddhisattva/mars_rover/blob/main/problem_statement.md), this is a program that calculates a rovers final position after traversing along a given path within a certain terrain(in this case its a Rectangular plateau). One can see how the sample output looks like from the [program output](https://github.com/boddhisattva/mars_rover/blob/master/README.md#program-output) section
 
 
 ## Code related design decisions
@@ -38,10 +38,7 @@ Based on the given [problem statement](https://github.com/boddhisattva/mars_rove
 * While moving horizontally or vertically, we specifically do not check the current value of orientation from within the `Position` class.
   * For the scope of the given problem statement, since the given compass directions
   determine the movement along the X & Y axis(through the #move method in their respective classes), I currently feel that could be a good start to determine how and when x & y coordinates can be incremented or decremented
-  * Since we don't know what the future need of enhancing this application can currently look like, I leaned on the side of applying the YAGNI principle and currently not to check what is the orientation of the current object from within the Position class and only the determine if x/y coordinate can be incremented or
-  decremented
-
-
+  * Since we don't know what the future need of enhancing this application can currently look like, I leaned on the side of applying the YAGNI principle and not checking the orientation for the current position object when incrementing or decrementing the x or y coordinate.
 
 ## Usage
 
