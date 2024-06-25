@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# This is the terrain within which actual permissible movement is checked
+
 class RectangularPlateau
   def initialize(lower_x_coordinate, lower_y_coordinate, upper_x_coordinate, upper_y_coordinate)
     @lower_x_coordinate = lower_x_coordinate

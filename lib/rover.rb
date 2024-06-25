@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+# Ensures the overall rover movement can happen along a specific path
+# and within a given terrain
+
 class InvalidStepError < StandardError; end
 
 require_relative 'north'

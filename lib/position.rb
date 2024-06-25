@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+# Ensures that an entity makes the movement by one unit in either
+# of the four compass directions - North, South, East, West
+
 class OutsideBoundaryLimitsError < StandardError; end
 
 class Position
