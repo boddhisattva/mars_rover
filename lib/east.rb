@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# Details of different kinds of movement with regard to the East direction
+
 class East
   def short_form
     'E'

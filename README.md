@@ -2,7 +2,7 @@
 
 ## About
 
-Based on the given [problem statement](https://github.com/boddhisattva/mars_rover/blob/main/problem_statement.md), this is a program that calculates a rovers final position after traversing along a given path within a certain terrain(in this case its a Rectangular plateau). You see how the [sample output](https://github.com/boddhisattva/mars_rover/blob/master/README.md#program-output) looks like from the sample program out section
+Based on the given [problem statement](https://github.com/boddhisattva/mars_rover/blob/main/problem_statement.md), this is a program that calculates a rovers final position after traversing along a given path within a certain terrain(in this case its a Rectangular plateau). You see how the sample output looks like from the [program output](https://github.com/boddhisattva/mars_rover/blob/master/README.md#program-output) section
 
 
 ## Code related design decisions
@@ -18,14 +18,15 @@ Based on the given [problem statement](https://github.com/boddhisattva/mars_rove
 * The code is designed in such a way that a Rover can navigate freely within the perimeter of the specified terrain.
   * In case a Rover attempts to traverse outside the given terrain, they get a `OutsideBoundaryLimitsError` and an appropriate error message
 
-* The code also checks to ensure that a Rover can only traverse along a valid path. In case of an invalid step in the path, a InvalidStepError us returned with an appropriate error message
+* The code also checks to ensure that a Rover can only traverse along a valid path.
+  * In case of an invalid step in the path, an `InvalidStepError` us returned with an appropriate error message
 
 * With Single Responsibility Principle in mind, the responsibility of each class is:
-  * A `Rover` class that can traverse a specific path within a given terrain
-  * A `Position` class that actually makes the movement of an entity by one unit in either of the four compass directions - North, South, East, West
-  * A `Rectangular Plateau` which is the terrain with which actual permissible movement is checked
+  * A `Rover` class ensures the overall rover movement can happen along a specific path and within a given terrain
+  * A `Position` class ensures that an entity makes the movement by one unit in either of the four compass directions - North, South, East, West
+  * A `Rectangular Plateau` is the terrain within which actual permissible movement is checked
   * A `Path` class that has a clear representation of valid steps in a given path that a rover can take
-  * A separate class each for the four compass directions - North, South, East and West with each respective class having a clear way of indicating what movement along that specific direction could look like and what comes to the left & right of each direction
+  * A separate class each for the four compass directions - `North`, `South`, `East` and `West` with each respective class having a clear way of indicating what movement along that specific direction could look like and what comes to the left & right of each direction
 
 ## Areas of Improvement
 
