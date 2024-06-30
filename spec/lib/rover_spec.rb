@@ -50,6 +50,16 @@ describe Rover do
     end
   end
 
+  describe '#get_current_position' do
+    it 'returns the current compass based position of a given entity' do
+      rover1 = described_class.new(Position.new(1, 2, 'N', terrain))
+
+      expect(rover1.get_current_position.x_coordinate).to eq(1)
+      expect(rover1.get_current_position.y_coordinate).to eq(2)
+      expect(rover1.get_current_position.orientation).to eq('N')
+    end
+  end
+
   describe '#current_location' do
     context 'when given a rover that is present at a specified position' do
       it 'returns the current location of that rover' do

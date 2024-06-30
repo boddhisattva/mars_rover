@@ -2,7 +2,12 @@
 
 ## About
 
-Based on the given [problem statement](https://github.com/boddhisattva/mars_rover/blob/main/problem_statement.md), this is a program that calculates a rovers final position after traversing along a given path within a certain terrain(in this case its a Rectangular plateau). One can see how the sample output looks like from the [program output](https://github.com/boddhisattva/mars_rover/blob/master/README.md#program-output) section
+Based on [this problem statement](https://github.com/boddhisattva/mars_rover/blob/main/problem_statement.md), this program calculates a rovers final position after traversing a given path within a terrain.
+* [Code related design decisions](https://github.com/boddhisattva/mars_rover/?tab=readme-ov-file#code-related-design-decisions) gives a high level overview of the **approach & thought process** behind the solution
+* This program also uses the **Flog metric** to observe scores of individual methods.
+  * I make use of the blog: [What's a Good Flog Score?](https://jakescruggs.blogspot.com/2008/08/whats-good-flog-score.html) as a reference to see how the written code is currently fairing
+  * In the entire app, the method `Path#navigate_steps` has the **highest complexity score** of **10.8**
+* One can see how the sample output looks like from the [program output](https://github.com/boddhisattva/mars_rover/blob/master/README.md#program-output) section
 
 
 ## Code related design decisions
